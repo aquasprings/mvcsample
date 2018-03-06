@@ -1,0 +1,40 @@
+@model SampleMVC5.Models.samplemvc5
+@{
+    ViewBag.Title = "regcus";
+}
+
+<h2>Register Customer</h2>
+@using (Html.BeginForm())
+{
+    <table>
+
+
+        <tr>
+            <td>@Html.LabelFor(z => z.name)</td>
+
+            <td>@Html.TextBoxFor(z => z.name)</td>
+            <td>@Html.ValidationMessageFor(z => z.name) </td>
+
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(z => z.gender)</td>
+
+            <td>@Html.TextBoxFor(z => z.gender)</td>
+            <td>@Html.ValidationMessageFor(z => z.gender) </td>
+
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="submit" value="Register" /></td>
+            <td></td>
+
+        </tr>
+        <tr>
+            <td>@ViewBag.l1</td>
+
+        </tr>
+
+
+    </table>
+}
+
