@@ -1,0 +1,39 @@
+USE db01test01
+
+create table samplemvc5
+( id int identity(1000,1) primary key,
+ name varchar(40),
+ gender varchar(20)
+
+);
+SELECT * FROM samplemvc5
+truncate table samplemvc5
+
+CREATE PROC
+sp_insertmvc5
+
+@cname varchar(40),
+@cgender varchar(20),
+@cid int out
+as
+begin
+insert into samplemvc5 values(@cname, @cgender);
+set @cid=@@IDENTITY;
+end
+
+create proc sp_deletemvc5
+@id1 int
+as
+begin
+delete from samplemvc5 where id=@id1;
+end
+
+create proc sp_updatemvc5
+@id1 int, @n varchar(30), @g varchar(30)
+as
+begin
+update samplemvc5 
+set name=@n ,  gender=@g where id=@id1
+end
+
+
