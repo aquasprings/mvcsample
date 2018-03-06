@@ -1,0 +1,53 @@
+@model SampleMVC5.Models.samplemvc5
+@{
+    ViewBag.Title = "viewcus";
+}
+
+<h2>View Customer Details</h2>
+<table id="table1">
+    <thead>
+    <th>Name</th>     
+    <th>Gender</th>
+    <th>ID</th>
+    <th>Delete</th>
+    <th>Edit</th>
+    </thead> 
+    
+            @foreach (var i in ViewBag.u1)
+            {
+                <tr>
+                    <td>
+                        @i.name
+                    </td>
+                    <td>
+                        @i.gender
+                    </td>
+                    <td>
+                        @i.id
+                    </td>
+                    <td>
+                        @Html.ActionLink("Delete","delcus",new{ i.id });
+                       
+                    </td>
+                    <td>@Html.ActionLink("Edit", "updcus", new { i.id });</td>
+                </tr>
+            }
+
+        
+
+    
+</table>
+<style>
+    table#table1 {
+        border:groove;
+    }
+    thead {
+        background-color:burlywood
+    }
+    th, td {
+
+        padding: 15px;
+    }
+
+</style>
+
